@@ -10,11 +10,13 @@ import { HomePage } from '../pages/home/home';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 import {HttpModule} from "@angular/http";
+import {EscolhaPage} from "../pages/escolha/escolha";
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    EscolhaPage
   ],
   imports: [
     BrowserModule,
@@ -24,7 +26,8 @@ import {HttpModule} from "@angular/http";
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    EscolhaPage
   ],
   providers: [
     StatusBar,

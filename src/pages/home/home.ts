@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {NavController, LoadingController, AlertController} from 'ionic-angular';
 import { Http } from '@angular/http';
+import {EscolhaPage} from "../escolha/escolha";
+import {Carro} from "../../domain/carro/carro";
 
 @Component({
   selector: 'page-home',
@@ -8,7 +10,7 @@ import { Http } from '@angular/http';
 })
 export class HomePage implements OnInit {
 
-  public carros;
+  public carros: Array<Carro>;
 
   constructor(
     public navCtrl: NavController,
@@ -41,6 +43,10 @@ export class HomePage implements OnInit {
           subTitle: 'Não foi possível obter a lista de carros. Tente mais tarde.'
         }).present();
       });
+  }
+
+  seleciona(carro: Carro) {
+    this.navCtrl.push(EscolhaPage, {carroSelecionado: carro});
   }
 
 }
