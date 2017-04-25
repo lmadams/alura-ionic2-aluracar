@@ -1,3 +1,5 @@
+import { PerfilPage } from './../pages/perfil/perfil';
+import { UsuarioService } from './../domain/usuario/usuario-service';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -16,6 +18,7 @@ import {AgendamentoService} from "../domain/agendamento/agendamento-service";
 import {Storage} from "@ionic/storage";
 import {AgendamentoDao} from "../domain/agendamento/agendamento-dao";
 import {AgendamentosPage} from "../pages/agendamentos/agendamentos";
+import {LoginPage} from "../pages/login/login";
 
 function provideStorage() {
   return new Storage({
@@ -31,7 +34,9 @@ function provideStorage() {
     HomePage,
     EscolhaPage,
     CadastroPage,
-    AgendamentosPage
+    AgendamentosPage,
+    LoginPage,
+    PerfilPage
   ],
   imports: [
     BrowserModule,
@@ -44,7 +49,9 @@ function provideStorage() {
     HomePage,
     EscolhaPage,
     CadastroPage,
-    AgendamentosPage
+    AgendamentosPage,
+    LoginPage,
+    PerfilPage
   ],
   providers: [
     StatusBar,
@@ -52,7 +59,8 @@ function provideStorage() {
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AgendamentoService,
     {provide: Storage, useFactory: provideStorage},
-    AgendamentoDao
+    AgendamentoDao,
+    UsuarioService
   ]
 })
 export class AppModule {}

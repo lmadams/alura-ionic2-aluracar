@@ -1,17 +1,19 @@
+import { PerfilPage } from './../pages/perfil/perfil';
+import { LoginPage } from './../pages/login/login';
 import {Component, ViewChild} from '@angular/core';
 import {Nav, Platform} from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { HomePage } from '../pages/home/home';
 import {AgendamentosPage} from "../pages/agendamentos/agendamentos";
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = HomePage;
+  rootPage:any = LoginPage;
   public paginas = [
+    { titulo: 'Perfil', component: PerfilPage},
     { titulo: 'Agendamentos', component: AgendamentosPage}
   ];
   @ViewChild(Nav) public nav: Nav;
