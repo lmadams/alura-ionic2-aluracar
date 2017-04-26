@@ -24,7 +24,7 @@ function provideStorage() {
   return new Storage({
     name: 'aluracar',
     storeName: 'agendamentos',
-    driverOrder: ['indexeddb']
+    driverOrder: ['indexeddb', 'sqlite']
   });
 }
 
