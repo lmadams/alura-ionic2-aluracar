@@ -19,6 +19,7 @@ import {Storage} from "@ionic/storage";
 import {AgendamentoDao} from "../domain/agendamento/agendamento-dao";
 import {AgendamentosPage} from "../pages/agendamentos/agendamentos";
 import {LoginPage} from "../pages/login/login";
+import {Vibration} from "@ionic-native/vibration";
 
 function provideStorage() {
   return new Storage({
@@ -60,7 +61,8 @@ function provideStorage() {
     AgendamentoService,
     {provide: Storage, useFactory: provideStorage},
     AgendamentoDao,
-    UsuarioService
+    UsuarioService,
+    Vibration
   ]
 })
 export class AppModule {}
