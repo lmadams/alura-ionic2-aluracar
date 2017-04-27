@@ -5,6 +5,7 @@ import {HomePage} from "../home/home";
 import {Agendamento} from "../../domain/agendamento/agendamento";
 import {AgendamentoService} from "../../domain/agendamento/agendamento-service";
 import { Vibration } from '@ionic-native/vibration';
+import { DatePicker } from '@ionic-native/date-picker';
 
 @Component({
   templateUrl: 'cadastro.html',
@@ -21,7 +22,8 @@ export class CadastroPage {
     public navParams: NavParams,
     private _agendamentoService: AgendamentoService,
     private _alertCtrl: AlertController,
-    private _vibration: Vibration) {
+    private _vibration: Vibration,
+    private _datePicker: DatePicker) {
 
     this.carro = this.navParams.get('carro');
     this.precoTotal = this.navParams.get('precoTotal');
@@ -59,5 +61,16 @@ export class CadastroPage {
         this._alerta.setSubTitle(err.message);
         this._alerta.present();
       });
+  }
+
+  selecionaData() {
+    this._datePicker.show({
+      date: new Date(),
+      mode: 'date',
+      androidTheme: this._datePicker.ANDROID_THEMES.THEME_HOLO_DARK
+    })
+    .then(data => {
+      this.agendamento.data = data.toISOString();
+    });
   }
 }

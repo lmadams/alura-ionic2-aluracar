@@ -1,3 +1,4 @@
+import { DatePicker } from '@ionic-native/date-picker';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -64,7 +65,8 @@ function provideStorage() {
     AgendamentoDao,
     UsuarioService,
     Vibration,
-    Camera
+    Camera,
+    DatePicker
   ]
 })
 export class AppModule {}
