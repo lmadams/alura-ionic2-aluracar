@@ -1,5 +1,3 @@
-import { PerfilPage } from './../pages/perfil/perfil';
-import { UsuarioService } from './../domain/usuario/usuario-service';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -20,6 +18,9 @@ import {AgendamentoDao} from "../domain/agendamento/agendamento-dao";
 import {AgendamentosPage} from "../pages/agendamentos/agendamentos";
 import {LoginPage} from "../pages/login/login";
 import {Vibration} from "@ionic-native/vibration";
+import {PerfilPage} from "../pages/perfil/perfil";
+import {UsuarioService} from "../domain/usuario/usuario-service";
+import {Camera} from "@ionic-native/camera";
 
 function provideStorage() {
   return new Storage({
@@ -62,7 +63,8 @@ function provideStorage() {
     {provide: Storage, useFactory: provideStorage},
     AgendamentoDao,
     UsuarioService,
-    Vibration
+    Vibration,
+    Camera
   ]
 })
 export class AppModule {}
